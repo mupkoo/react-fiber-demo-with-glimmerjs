@@ -1,7 +1,7 @@
-# glimmer-fiber-demo
+# React Fiber Demo with GlimmerJS
 
-This README outlines the details of collaborating on this Glimmer application.
-A short introduction of this app could easily go here.
+Recreation of [React Fiber vs Stack Demo](https://claudiopro.github.io/react-fiber-vs-stack-demo/) 
+using GlimmerJS
 
 ## Prerequisites
 
@@ -14,9 +14,9 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd glimmer-fiber-demo`
-* `yarn`
+* `git clone git@github.com:mupkoo/react-fiber-demo-with-glimmerjs.git` this repository
+* `cd react-fiber-demo-with-glimmerjs`
+* `npm install`
 
 ## Running / Development
 

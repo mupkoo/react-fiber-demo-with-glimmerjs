@@ -1,0 +1,27 @@
+<div>
+  {{#if showDot}}
+    <fiber-dot
+        @x={{ positions.dot.x }}
+        @y={{ positions.dot.y }}
+        @size={{ targetSize }}
+        @text={{ @seconds }} />
+  {{else}}
+    <fiber-triangle
+        @x={{ positions.top.x }}
+        @y={{ positions.top.y }}
+        @s={{ nextS }}
+        @seconds={{ @seconds }} />
+
+    <fiber-triangle
+        @x={{ positions.middle.x }}
+        @y={{ positions.middle.y }}
+        @s={{ nextS }}
+        @seconds={{ @seconds }} />
+
+    <fiber-triangle
+        @x={{ positions.bottom.x }}
+        @y={{ positions.bottom.y }}
+        @s={{ nextS }}
+        @seconds={{ @seconds }} />
+  {{/if}}
+</div>
