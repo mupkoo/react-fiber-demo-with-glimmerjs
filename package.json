@@ -9,7 +9,8 @@
   "scripts": {
     "build": "ember build -e production",
     "start": "ember server",
-    "test": "ember test"
+    "test": "ember test",
+    "deploy": "ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\"; git push; git checkout -"
   },
   "devDependencies": {
     "@glimmer/application": "^0.7.2",
@@ -22,6 +23,7 @@
     "broccoli-asset-rev": "^2.5.0",
     "ember-cli": "^2.14.0",
     "ember-cli-dependency-checker": "^2.0.1",
+    "ember-cli-github-pages": "^0.1.2",
     "ember-cli-inject-live-reload": "^1.6.1",
     "ember-cli-sass": "^6.2.0",
     "ember-cli-uglify": "^2.0.0-beta.1",
