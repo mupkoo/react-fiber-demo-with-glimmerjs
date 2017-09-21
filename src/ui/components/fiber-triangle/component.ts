@@ -4,17 +4,17 @@ export default class FiberTriangle extends Component {
   targetSize: number = 25;
 
   @tracked('args')
-  get showDot() {
+  get showDot(): boolean {
     return this.args.s <= this.targetSize;
   }
 
   @tracked('args')
-  get nextS() {
+  get nextS(): number {
     return this.args.s / 2;
   }
 
   @tracked('args')
-  get positions() {
+  get positions(): object {
     let s = this.nextS;
 
     return {

@@ -14,6 +14,6 @@ app.registerInitializer({
   }
 });
 
-app.renderComponent('glimmer-fiber-demo', containerElement, null);
+app.renderComponent('fiber-container', containerElement, null);
 
 app.boot();

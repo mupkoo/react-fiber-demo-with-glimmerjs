@@ -1,3 +1,7 @@
+Number of dots: <strong>{{ dotsCount }}</strong><br>
+<button onclick={{ action increaseDots }} type="button">Increase Dots</button>
+<button onclick={{ action decreaseDots }} type="button">Decrease Dots</button>
+
 <div style={{ style }}>
-  <fiber-triangle @x={{ startX }} @y={{ startY }} @s={{ startS }} @seconds={{ seconds }} />
+  <fiber-triangle @x={{ startX }} @y={{ startY }} @s={{ dotsCount }} @seconds={{ seconds }} />
 </div>

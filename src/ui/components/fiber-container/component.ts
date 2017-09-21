@@ -3,18 +3,19 @@ import Component, { tracked } from '@glimmer/component';
 export default class FiberContainer extends Component {
   @tracked elapsed: number = 0;
   @tracked seconds: number = 0;
+  @tracked dotsCount: number = 1000;
 
   startX: number = 0;
   startY: number = 0;
-  startS: number = 1000;
-
   intervalID: number;
 
-  @tracked('elapsed')
-  get style() {
-    const elapsed = this.elapsed;
-    const t = (elapsed / 1000) % 10;
-    const scale = 1 + (t > 5 ? 10 - t : t) / 10;
+  @tracked('elapsed', 'dotsCount')
+  get style(): string {
+    let elapsed = this.elapsed;
+    let t = (elapsed / 1000) % 10;
+    let scale = this.dotsCount / 1000;
+    let scaleX = (1 + (t > 5 ? 10 - t : t) / 10) / (2.1 * scale);
+    let scaleY = 0.7 / scale;
 
     return `
       position: absolute;
@@ -23,9 +24,16 @@ export default class FiberContainer extends Component {
       top: 50%;
       width: 10px;
       height: 10px;
-      background: #eee;
-      transform: scaleX(${scale / 2.1}) scaleY(0.7) translateZ(0.1px);
+      transform: scaleX(${scaleX}) scaleY(${scaleY}) translateZ(0.1px);
     `;
+  }
+
+  increaseDots() {
+    this.dotsCount *= 2;
+  }
+
+  decreaseDots() {
+    this.dotsCount *= .5;
   }
 
   didInsertElement() {
@@ -41,7 +49,7 @@ export default class FiberContainer extends Component {
     requestAnimationFrame(update);
   }
 
-  tick() {
+  private tick() {
     this.seconds = (this.seconds % 10) + 1;
   }
 }

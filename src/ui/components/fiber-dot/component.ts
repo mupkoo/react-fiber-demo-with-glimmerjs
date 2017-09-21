@@ -4,12 +4,12 @@ export default class FiberDot extends Component {
   @tracked hover = false;
 
   @tracked('args', 'hover')
-  get text() {
+  get text(): string {
     return this.hover ? '**' + this.args.text + '**' : this.args.text;
   }
 
   @tracked('args', 'hover')
-  get style() {
+  get style(): string {
     let size = this.args.size * 1.3;
 
     return `
